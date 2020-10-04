@@ -22,6 +22,56 @@
         <meta name="veiwport"              content= "width=device-width, initial-scale=1.0">
         <script> function aboutUs() {window.location.href = "https://ayaan-codes.github.io/a-co/aboutus.html"}</script>
 
+<style>
+*
+h1 {
+  font-size: 50px;
+  word-break: break-all;
+}
+
+.row {
+  margin: 8px -16px;
+}
+
+
+.row,
+.row > .column {
+  padding: 8px;
+}
+
+
+.column {
+  float: left;
+  width: 25%;
+}
+
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+
+.content {
+  background-color: white;
+  padding: 10px;
+}
+
+
+@media screen and (max-width: 900px) {
+  .column {
+    width: 50%;
+  }
+}
+
+
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+  }
+}
+</style>
     </head>
     <body>
 <!--main-->
@@ -125,16 +175,56 @@ window.addEventListener("load", function () {
                                                                                                                       
 <!-- Portfolio Area-->                           
     
+    
 <section id="services">
     <div class="container">
         <h3> Portfolio </h3>
-        
-    
-    
+      <div class="container">
+
+        <div class="row">
+  <div class="column">
+    <div class="content">
+
+      <h3>Portfolio Picture 1 Name</h3>
+      <img src="http://clipart-library.com/img/1832282.png" alt="Portfolie Picture 1 ALT" style="width:100%">
+      <p>Portfolie Picture 1 paragraph</p>
+    </div>
+  </div>
+  <div class="column">
+    <div class="content">
+     <h3>Portfolio Picture 2 Name</h3>
+      <img src="http://clipart-library.com/img/1832282.png" alt="Portfolie Picture 2 ALT" style="width:100%">
+      <p>Portfolie Picture 2 paragraph</p>
+    </div>
+  </div>
+  <div class="column">
+    <div class="content">
+     <h3>Portfolio Picture 3 Name</h3>
+      <img src="http://clipart-library.com/img/1832282.png" alt="Portfolie Picture 3 ALT" style="width:100%">
+      <p>Portfolie Picture 3 paragraph</p>
+    </div>
+  </div>
+  <div class="column">
+    <div class="content">
+ <h3>Portfolio Picture 4 Name</h3>
+      <img src="http://clipart-library.com/img/1832282.png" alt="Portfolie Picture 4 ALT" style="width:100%">
+      <p>Portfolie Picture 4 paragraph</p>
+    </div>
+  </div>
+</div>
+
+<div class="content">
+<h3 style="text-align:center">Portfolio Picture 5 Name</h3>
+      <img src="http://clipart-library.com/img/1832282.png" alt="Portfolie Picture 5 ALT" style="width:100%">
+      <p style="align:center">Portfolie Picture 5 paragraph</p>
+
+</div>
+
+
     
     </div>
+</div>
  </section>
-     
-     
     </body>                                                                         
 </html>
+    
