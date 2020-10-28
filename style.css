@@ -225,3 +225,5 @@ input[type=submit]:hover {
     background: url("loading.gif") center no-repeat;
     background-size: cover;
 }
+00%  { background-color: #ccc; }
+}

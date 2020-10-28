@@ -1,18 +1,811 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>A. CO. Official Website</title>
-  </head>
-  <body>
-    <div id="start">
-      <h1>A. CO. Portfolio</h1>
-      <h2>Our job as A. CO</h2>
-      <br />
-      <p>At A. CO., we strive for fun and joy in all members. Our experience ranges from design and technology, to C# and Unity. Our staff are always out to help people; we even love creating a big chat.</p>
-      <p>Our brilliant events include nitro giveaways, skribble.io events and even trivia nights!</p>
-      <br />
-      <h2>So why don't you join A. CO. today!</h2>
-      <a href="https://discord.gg/HT4eMQF" target="_blank">Create your account!</a>
+<!--STYLE HEAD-->
+<head>
+        <title>ACO | Product Page</title>
+        <link rel="icon" 
+        type="image/png" 
+        href="iconweb.png">
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <script src="script.js"></script>
+       
+        <meta property="Title field"       content="A. CO. Website!"/>
+        <meta property="description"       content="This is ACO's official website, this page provides you everything you need and an about us area. Useful links can also be found on this page. Enjoy ACO!"/>
+        <meta name="theme-color"           content="#0000ff"/>
+        <meta property="description"       content="This is ACO's official website, this page provides you everything you need and an about us area. Useful links can also be found on 
+                                                    this page. Enjoy ACO!"/>
+        <meta name="theme-color"           content="#302898"/>
+        <meta name="image"                 content="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQ60V4_w9KXRW3eVIAJDmxoM81vatP45ldUDQ&usqp=CAU"/>
+        <meta name="veiwport"              content= "width=device-width, initial-scale=1.0">
+        <script> function aboutUs() {window.location.href = "https://ayaan-codes.github.io/a-co/aboutus.html"}</script>
+       
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-71CZGD1LR2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-71CZGD1LR2');
+</script>       
+
+<script>
+                var TxtRotate = function(el, toRotate, period) {
+  this.toRotate = toRotate;
+  this.el = el;
+  this.loopNum = 0;
+  this.period = parseInt(period, 10) || 2000;
+  this.txt = '';
+  this.tick();
+  this.isDeleting = false;
+};
+
+TxtRotate.prototype.tick = function() {
+  var i = this.loopNum % this.toRotate.length;
+  var fullTxt = this.toRotate[i];
+
+  if (this.isDeleting) {
+    this.txt = fullTxt.substring(0, this.txt.length - 1);
+  } else {
+    this.txt = fullTxt.substring(0, this.txt.length + 1);
+  }
+
+  this.el.innerHTML = '<span class="wrap">'+this.txt+'</span>';
+
+  var that = this;
+  var delta = 300 - Math.random() * 100;
+
+  if (this.isDeleting) { delta /= 2; }
+
+  if (!this.isDeleting && this.txt === fullTxt) {
+    delta = this.period;
+    this.isDeleting = true;
+  } else if (this.isDeleting && this.txt === '') {
+    this.isDeleting = false;
+    this.loopNum++;
+    delta = 500;
+  }
+
+  setTimeout(function() {
+    that.tick();
+  }, delta);
+};
+
+window.onload = function() {
+  var elements = document.getElementsByClassName('txt-rotate');
+  for (var i=0; i<elements.length; i++) {
+    var toRotate = elements[i].getAttribute('data-rotate');
+    var period = elements[i].getAttribute('data-period');
+    if (toRotate) {
+      new TxtRotate(elements[i], JSON.parse(toRotate), period);
+    }
+  }
+  // INJECT CSS
+  var css = document.createElement("style");
+  css.type = "text/css";
+  css.innerHTML = ".txt-rotate > .wrap { border-right: 0.08em solid #666 }";
+  document.body.appendChild(css);
+};
+        </script>
+        
+<style>
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+  margin: 30px;
+  text-align: center;
+  font-family: arial;
+}
+
+.price {
+  color: grey;
+  font-size: 22px;
+}
+
+.card button {
+  border: none;
+  outline: 0;
+  padding: 12px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+}
+
+.card button:hover {
+  opacity: 0.7;
+}
+.txt-rotate {
+        padding=30px;
+}
+</style>
+</head>
+<!--STYLE HEAD END-->
+<!--main-->
+        
+<!--spinner-->       
+<div class='spinner-wrapper'>
+    <div class="spinner"></div>
+</div>
+
+
+
+<script>
+    let spinnerWrapper = document.querySelector('.spinner-wrapper');
+
+    window.addEventListener('load', function () {
+        // spinnerWrapper.style.display = 'none';
+        spinnerWrapper.parentElement.removeChild(spinnerWrapper);
+    });
+</script>
+        
+<!------------>        
+        
+<!-- Nav bar-->                                                                                          
+                                                                                          
+      <section id="nav-bar">
+      <nav class="navbar navbar-expand-lg navbar-light">
+      <a class="navbar-brand" href="#"><img src="acoweb.png"></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="aboutus.html">About Us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="portfolio.html">Products</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="contact.html">Contact Us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://acogoogle.business.site/">Updates/More</a>
+        </li>
+      </ul>
+      </div>
+      </nav>
+      </section>                                                                                   
+  
+  
+<body>
+<!---------------------------------------------------------------------------------------------------------------------------------------------------------->
+
+<img src="aco products.png" alt="header-pic">
+
+<input type="search" name="search_query" autocomplete="off" autocorrect="on" autocapitalize="on" maxlength="100" placeholder="Search the product page..." onfocus="CrispHelpdeskCommon.toggle_search_focus(true)" onkeyup="CrispHelpdeskCommon.type_search_field(this)" onsearch="CrispHelpdeskCommon.search_search_field(this)" class="csh-font-sans-semibold">
+<link href="https://fonts.googleapis.com/css?family=Raleway:200,100,400" rel="stylesheet" type="text/css" />
+<h1>ACO Products...
+<span
+     class="txt-rotate"
+     data-period="2000"
+     data-rotate='[ "can wow people!", "can help!", "can help you get that job you wanted!", "make you stand out!", "can make you smile!", "can help you get that A+ on your essay", "can do wonders!", "can make you look more professional", "are the best!" ]'></span>
+</h1>
+
+        
+    
+<iframe width="875" height="350" src="https://www.youtube.com/embed/g2sZKwWe9AU?controls=0">
+</iframe>
+
+<div>        
+       
+<div class='row'>
+<!-- ITEM ONE -->
+<h2 style="text-align:center"></h2>
+
+<div class="col card">
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTlYvzt71tyiUOpi5T6DK7z2KpNo6wMQpTrAg&usqp=CAU" alt="Denim Jeans" style="width:100%">
+  <h1>ACO Online Security & Ad Blocker</h1>
+  <p class="price">ACO Tech</p>
+  <p>ACO Online Security and Ad blocker! The best free secure service online!</p>
+  <a href="https://ayaan-codes.github.io/aco-adblock-security/">Get it now!</a>
+
+</div>
+
+<!-- ITEM ONE-->  
+<!-- ITEM TWO -->
+<h2 style="text-align:center"></h2>
+
+<div class="col card">
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRJWOO3EVsc8acnLzYq_GAGAdvhhmlkk0UVYA&usqp=CAU" alt="Denim Jeans" style="width:100%">
+  <h1>ACO Search</h1>
+  <p class="price">ACO Tech</p>
+  <p>ACO Search is the best search engine out there, REAL results and NO FAKE INFO! Advanced searching to get you exactly what you want!</p>
+  <a href="https://ayaan-codes.github.io/search/">Search now!</a>
+
+</div>
+
+<!-- ITEM TWO-->  
+<!-- ITEM THREE -->
+<h2 style="text-align:center"></h2>
+
+<div class="col card">
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSXTZ2XiLm2ygP16D7WMrgtrbcOYqk3Cr48Fg&usqp=CAU" alt="Denim Jeans" style="width:100%">
+  <h1>ACO Calculator</h1>
+  <p class="price">ACO Tech</p>
+  <p>An advanced calculator with all the functions, 100% accurate and always updated! 0.0004ms response time!</p>
+  <a href="https://ayaan-codes.github.io/calculator/">Use now!</a>
+
+</div>
+
+<!-- ITEM THREE-->
+</div>
+<div class='row'>
+<!-- ITEM FOUR -->
+<h2 style="text-align:center"></h2>
+
+<div class="col card">
+  <img src="https://img.freepik.com/free-vector/premium-collection-badge-design-vector_53876-43821.jpg?size=338&ext=jpg" alt="Denim Jeans" style="width:100%">
+  <h1>ACO Premium</h1>
+  <p class="price">ACO Membership</p>
+  <p>Perks, on perks, on perks, on more perks! The BEST membership you can get with discounts, more product, and extra service. There is at least 1 new perk per week!</p>
+  <a href="premium.html">Get prime today!</a>
+
+</div>
+
+<!-- ITEM FOUR-->
+<!-- ITEM FIVE -->
+<h2 style="text-align:center"></h2>
+
+<div class="col card">
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQ7ygxR8NckMCSqqP8UWkG4d_k4gBGfh0Bx9w&usqp=CAU" alt="Denim Jeans" style="width:100%">
+  <h1>SMARTi app</h1>
+  <p class="price">ACO app</p>
+  <p>(BETA) This is the new SMARTi app, it is like Siri and Alexa. We have a ton of fetures and can beat everything else on the internet!</p>
+  <a href="https://ayaan-codes.github.io/aco-smarti/">Try it early!</a>
+
+</div>
+
+<!-- ITEM FIVE-->
+<!-- ITEM SIX -->
+<h2 style="text-align:center"></h2>
+
+<div class="col card">
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQeHXr2zRVtPoTEk3vQmLqPCVFBAkd6XpV9BA&usqp=CAU" alt="Denim Jeans" style="width:100%">
+  <h1>Upload Magic</h1>
+  <p class="price">ACO Service</p>
+  <p>(BETA) This is an upload website which lets you submit files to your admin, teacher, or co-worker in seconds!</p>
+  <a href="https://ayaan-codes.github.io/upload-majic-aco/">Get it FREE!</a>
+
+</div>
+
+<!-- ITEM SIX-->
+</div>
+<div class='row'>
+<!-- ITEM SEVEN -->
+<h2 style="text-align:center"></h2>
+
+<div class="card">
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTIXdtDMJP-JLLjK8ZLg9_V0nDZLtChldbAmg&usqp=CAU" alt="Denim Jeans" style="width:100%">
+  <h1>ACO Network Tester</h1>
+  <p class="price">ACO Network</p>
+  <p>(BETA) This is the ACO Network test website, it can give you your internet speed, DNS data, IP address and much more!</p>
+  <a href="https://ayaan-codes.github.io/aco-networking/">Network now!</a>
+
+</div>
+
+<!-- ITEM SEVEN-->
+<!-- ITEM EIGHT -->
+<h2 style="text-align:center"></h2>
+
+<div class="card">
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRjNmBrWe0HmdVOijE8h4HL1LLnYfWM_NWfEg&usqp=CAU" alt="Denim Jeans" style="width:100%">
+  <h1>ACO Drive</h1>
+  <p class="price">Prototype</p>
+  <p>Clouad file service with docs, slides, sheets, and more. The Drive part of the ACO Work ECO-System</p>
+  <a href="mailto:a.co.network01@gmail.com">Get beta!</a>
+
+</div>
+
+<!-- ITEM EIGHT-->
+<!-- ITEM NINE -->
+<h2 style="text-align:center"></h2>
+
+<div class="card">
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRl5ZG2Hzyh0o33jBBNn1a7p30_l0sOIuPfNQ&usqp=CAU" alt="Denim Jeans" style="width:100%">
+  <h1>ACO Work ECO-System</h1>
+  <p class="price">Prototype</p>
+  <p>Do all your work in one secure place! Drive, online meetings, and much more. The one stop for work!</p>
+  <a href="mailto:a.co.network01@gmail.com">Get beta!</a>
+
+</div>
+
+<!-- ITEM NINE-->        
+</div>  
+<div class='row'>
+<!-- ITEM TEN -->
+<h2 style="text-align:center"></h2>
+
+<div class="card">
+  <img src="https://images.creativemarket.com/0.1.0/ps/5118724/300/200/m2/fpnw/wm0/lla64lky0elrdtlla245uwsw9sgj7bhpl5jqvck7u5nzk2h59wil6hkfj3utvzrd-.jpg?1538135279&s=bde3d3d58bcd025fc4569a6ead8707e3" alt="Denim Jeans" style="width:100%">
+  <h1>ACO Development</h1>
+  <p class="price">ACO Tech</p>
+  <p>Get professional websites and app that amaze! Get custom everything tech for a cheap price (Currently not available)</p>
+  <a href="mailto:aco.development.studio@gmail.com">Order now!</a>
+
+</div>
+
+<!-- ITEM TEN-->
+<!-- ITEM 11 -->
+<h2 style="text-align:center"></h2>
+
+<div class="card">
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTICslbkLBp8Sax80dD_lIqprMf-J8NbzmCAg&usqp=CAU" alt="Denim Jeans" style="width:100%">
+  <h1>ACO Games</h1>
+  <p class="price">Lazo Entertainment</p>
+  <p>GameHub, filled with the best games out there made with love at ACO, we speand months developing these games and they are just GOOD. Play for free today or buy Premium to get extra games!</p>
+  <a href="https://ayaan-codes.github.io/acogame/">Play now!</a>
+
+</div>
+
+<!-- ITEM 11-->
+<!-- ITEM 12 -->
+<h2 style="text-align:center"></h2>
+
+<div class="card">
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSaps22aNemOy8t6rnpLWnv01MkICmCaig3Sw&usqp=CAU" alt="Denim Jeans" style="width:100%">
+  <h1>ACO Statistics</h1>
+  <p class="price">ACO Tech</p>
+  <p>Statistical service with accurate data about all our service, get your company or project a statistics website today!</p>
+  <a href="https://aco.statuspage.io/">Get it now!</a>
+
+</div>
+
+<!-- ITEM 12-->        
+</div>
+<div class='row'>
+<!-- ITEM 13 -->
+<h2 style="text-align:center"></h2>
+
+<div class="card">
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQw4OQa2eayatFp_zcdJt5qx2FRnyvZ2l771w&usqp=CAU">
+  <h1>ACO Meet</h1>
+  <p class="price">ACO Social</p>
+  <p>HD video and voice meetings for FREE. Get ACO MEET (beta) today and start connecting you team!</p>
+  <a href="mailto:a.co.network01@gmail.com">Get beta!</a>
+
+</div>
+
+<!-- ITEM 13-->
+<!-- ITEM 14 -->
+<h2 style="text-align:center"></h2>
+
+<div class="card">
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRUPThBalpSHOLEopPZcckZ1JrgYYZddJJtFQ&usqp=CAU" alt="Denim Jeans" style="width:100%">
+  <h1>ACO Store</h1>
+  <p class="price">ACO Retail</p>
+  <p>(beta) ACO Store, the place where you can buy any ACO product and service. Get discounts and much more once its open!</p>
+  <a href="mailto:a.co.network01@gmail.com">Become a beta tester!</a>
+
+</div>
+
+<!-- ITEM 14-->
+<!-- ITEM 15 -->
+<h2 style="text-align:center"></h2>
+
+<div class="card">
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQIHpHU5onCGAICxImlgZUuePWz1wtg9Vikhg&usqp=CAU" alt="Denim Jeans" style="width:100%">
+  <h1>ACO Support System</h1>
+  <p class="price">ACO Support</p>
+  <p>Get the best support system for your website!</p>
+  <a href="https://aco-support.crisp.help/en/">Check it out!</a>
+
+</div>
+
+<!-- ITEM 15-->        
+</div>
+<div class='row'>
+<!-- ITEM 16 -->
+<h2 style="text-align:center"></h2>
+
+<div class="card">
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRJHK47gmj1mzsuvdXgyb_NgLSa6cFSHrbiRQ&usqp=CAU">
+  <h1>ACO Chat</h1>
+  <p class="price">ACO Social</p>
+  <p>Text away with anyone you want on ACO chat!</p>
+  <a href="mailto:a.co.network01@gmail.com">Become a beta tester!</a>
+
+</div>
+
+<!-- ITEM 16-->
+<!-- ITEM 17 -->
+<h2 style="text-align:center"></h2>
+
+<div class="card">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Mail_%28iOS%29.svg" alt="Denim Jeans" style="width:100%">
+  <h1>ACO Mail</h1>
+  <p class="price">ACO Connectivity</p>
+  <p>(beta) Send and recive emails from anyone with ACO mail, secure, fast, and free!</p>
+  <a href="mailto:aco.development.studio@gmail.com">Order Beta</a>
+
+</div>
+
+<!-- ITEM 17-->
+<!-- ITEM 18 -->
+<h2 style="text-align:center"></h2>
+
+<div class="card">
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQNXZDVuKGUjRMz_VHkqvQCglMM1bpIjczOjQ&usqp=CAU" alt="Denim Jeans" style="width:100%">
+  <h1>ACO BOT</h1>
+  <p class="price">ACO Tech</p>
+  <p>Bots the can do anything from play a game to read you the news, the wide range of ACO bots are just next level</p>
+  <a href="">Might be Unavailable</a>
+
+</div>
+
+<!-- ITEM 18-->        
+</div>
+<div class='row'>
+<!-- ITEM 19 -->
+<h2 style="text-align:center"></h2>
+
+<div class="card">
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQkrhDQqYJR7ikkcazWHhQ5i14nkqSbbvrkOQ&usqp=CAU">
+  <h1>ACO Photo</h1>
+  <p class="price">ACO Drive</p>
+  <p>Save photos and HD video with ACOPhoto, it takes about 3 seconds to upload a 60mb file and you can set on what way it renders. Uploading is powered by UploadMagic (ACO)</p>
+  <a href="mailto:a.co.network01@gmail.com">Get beta!</a>
+
+</div>
+
+<!-- ITEM 19-->
+<!-- ITEM 20 -->
+<h2 style="text-align:center"></h2>
+
+<div class="card">
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTXxciXiCFmhAq3LaU0i0v1QHo7z0DkLg3TwA&usqp=CAU" alt="Denim Jeans" style="width:100%">
+  <h1>ACO Oauth SignIn</h1>
+  <p class="price">ACO Connectivity</p>
+  <p>Get your website an ACO SignIn and SignUp page with ACO!</p>
+  <a href="mailto:aco.development.studio@gmail.com">Order now!</a>
+
+</div>
+
+<!-- ITEM 20-->
+<!-- ITEM 21 -->
+<h2 style="text-align:center"></h2>
+
+<div class="card">
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTTXktCPkKL-iO2rmZp7WvvZFCThnteqyiExw&usqp=CAU" alt="Denim Jeans" style="width:100%">
+  <h1>ACO Verification System</h1>
+  <p class="price">ACO Tech</p>
+  <p>Verify people, items, and services and see who is legit with ACO Verification</p>
+  <a href="mailto:aco.development.studio@gmail.com">Order now!</a>
+
+</div>
+
+<!-- ITEM 21-->        
+</div>
+<div class='row'>
+<!-- ITEM 22 -->
+<h2 style="text-align:center"></h2>
+
+<div class="card">
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRsf5ofzRZRn1JIQ0rJSHNEl4gT1Fey7irTrw&usqp=CAU">
+  <h1>ACO Cast</h1>
+  <p class="price">ACO Tech</p>
+  <p>Cast video, files, and ACO Drive docs to your Samsung smart or ACO TV STICK. Cast fron 440p to 1080p and over 50fps!</p>
+  <a href="mailto:a.co.network01@gmail.com">Get beta!</a>
+
+</div>
+
+<!-- ITEM 22-->
+<!-- ITEM 23 -->
+<h2 style="text-align:center"></h2>
+
+<div class="card">
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcS6IadE31dVYJ7Gb-5Z33bfyK1gNcbOnSv7ew&usqp=CAU" alt="Denim Jeans" style="width:100%">
+  <h1>ACO Accounts</h1>
+  <p class="price">ACO Connectivity</p>
+  <p>Add accounts to your website where a user can save, load, and see thier account. (Also has SignIn with ACO)</p>
+  <a href="mailto:aco.development.studio@gmail.com">Order now!</a>
+
+</div>
+
+<!-- ITEM 23-->
+<!-- ITEM 24 -->
+<h2 style="text-align:center"></h2>
+
+<div class="card">
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQuX0ymfAC5ksKn2vq1-0RcDimVKiBvWWSS_Q&usqp=CAU" alt="Denim Jeans" style="width:100%">
+  <h1>ACO ShareUp</h1>
+  <p class="price">ACO Tech</p>
+  <p>Transfer files upto 300gb for free and 3tera with ShareUp+ or ACO Premium. Share any file at any time in less than seconds by just selecting and entering the email of the person you want to share it with!</p>
+  <a href="">Download the (beta) app!</a>
+
+</div>
+
+<!-- ITEM 24-->        
+</div>
+<div class='row'>
+<!-- ITEM 25 -->
+<h2 style="text-align:center"></h2>
+
+<div class="card">
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcS9Us7fgt9C_Z2ZgRo6JdLLPNAsDceAtgCNlA&usqp=CAU">
+  <h1>ACO Translate</h1>
+  <p class="price">ACO Connectivity</p>
+  <p>Translate anything you want to over 300 languages (even some made up ones like pirate) and connect with the world better!</p>
+  <a href="mailto:a.co.network01@gmail.com">Get beta!</a>
+
+</div>
+
+<!-- ITEM 25-->
+<!-- ITEM 26 -->
+<h2 style="text-align:center"></h2>
+
+<div class="card">
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcROAmz7yqStJsIfaICjbFWVgyNEUiqvhODdqQ&usqp=CAU" alt="Denim Jeans" style="width:100%">
+  <h1>ACO Maps</h1>
+  <p class="price">ACO Connectivity</p>
+  <p>Navigate the world in 2d or 3d maps that update every week! Become a ACO assistant and add places to the map for everyone else to enjoy! Find something about a place already on the map? Well write a reveiw about it!</p>
+  <a href="mailto:a.co.network01@gmail.com">Get beta</a>
+
+</div>
+
+<!-- ITEM 26-->
+<!-- ITEM 27 -->
+<h2 style="text-align:center"></h2>
+
+<div class="card">
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTfs77Mlk8gsYXrJxKpr-LnH6bXomdGFydDxw&usqp=CAU" alt="Denim Jeans" style="width:100%">
+  <h1>ACO Open</h1>
+  <p class="price">ACO Tech</p>
+  <p>Make an open source project with ACO! Make your website, bot, blog, or anything else with ACO open where you can share it with the world!</p>
+  <a href="mailto:aco.development.studio@gmail.com">Become a beta tester!</a>
+
+</div>
+
+<!-- ITEM 27-->        
+</div>
+<div class='row'>
+<!-- ITEM 28 -->
+<h2 style="text-align:center"></h2>
+
+<div class="card">
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTav6f_0J72TFZwqKfc12wXI7ilIlKCz7mnQA&usqp=CAU">
+  <h1>ACO IT</h1>
+  <p class="price">ACO Tech</p>
+  <p>Need help with your PC, phone, laptop, or any other device? Check out ACO IT, we provide articals and tips to make your online life that much better!</p>
+  <a href="mailto:aco.development.studio@gmail.com">Ask questions here!</a>
+
+</div>
+
+<!-- ITEM 28-->
+<!-- ITEM 29 -->
+<h2 style="text-align:center"></h2>
+
+<div class="card">
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSdIbGWtvrdeGwAY0axJQ8FsG51ydMwt1AB5g&usqp=CAU" alt="Denim Jeans" style="width:100%">
+  <h1>ACO Multi</h1>
+  <p class="price">ACO Everything</p>
+  <p>An app with everything ACO inside,this is so you will not have to get another app for another product!</p>
+  <a href="mailto:a.co.network01@gmail.com">Get beta!</a>
+
+</div>
+
+<!-- ITEM 29-->
+<!-- ITEM 30 -->
+<h2 style="text-align:center"></h2>
+
+<div class="card">
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRZteBw2COVK-dnOroXQ0DipUy4gsFACaanNA&usqp=CAU" alt="Denim Jeans" style="width:100%">
+  <h1>Shoper by ACO</h1>
+  <p class="price">ACO Retail</p>
+  <p>Buy and sell items, update your stock and become a sales person online with ACO shoper website!</p>
+  <a href="mailto:a.co.network01@gmail.com">Get beta!</a>
+
+</div>
+
+<!-- ITEM 30-->        
+</div>
+<div class='row'>
+<!-- ITEM 31 -->
+<h2 style="text-align:center"></h2>
+
+<div class="card">
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRrU4ZuGCw31KHQh4X4RsEGyMS6WeByo8jnUw&usqp=CAU">
+  <h1>ACO AutoCore</h1>
+  <p class="price">ACO Tech</p>
+  <p>AutoCore your devices and make life easy, ACO AutoCore is a group of ACO products designed to make your laptop, phone, or any other device better!</p>
+  <a href="mailto:a.co.network01@gmail.com">Get beta!</a>
+
+</div>
+
+<!-- ITEM 31-->
+<!-- ITEM 32 -->
+<h2 style="text-align:center"></h2>
+
+<div class="card">
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTsvHQJTBCxdDF3A7_gHVKMwxAogMJ0nnRiSw&usqp=CAU" alt="Denim Jeans" style="width:100%">
+  <h1>ACO SpellCheck</h1>
+  <p class="price">ACO Assistant</p>
+  <p>Currently in beta, ACO AutoCorrect can help you stand out, say goodbye to typos and errors in your work!</p>
+  <a href="mailto:a.co.network01@gmail.com">Get beta!</a>
+
+</div>
+
+<!-- ITEM 32-->
+<!-- ITEM 33 -->
+<h2 style="text-align:center"></h2>
+
+<div class="card">
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSOWiSqTotrOa5nPt_ollKuq7ttyeUe2lyc6A&usqp=CAU" alt="Denim Jeans" style="width:100%">
+  <h1>ACO AI Shop</h1>
+  <p class="price">ACO Tech</p>
+  <p>Get ACO AI for your service by just contacting us and telling us how it should work, to date ACO AI works with over 500 apps worldwide!</p>
+  <a href="mailto:aco.development.studio@gmail.com">Order Now!</a>
+
+</div>
+
+<!-- ITEM 33-->        
+</div>
+
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+</div>
+<!-- Footer -->
+<footer class="page-footer font-small unique-color-dark">
+
+  <div style="background-color: #6351ce;">
+    <div class="container">
+
+      <!-- Grid row-->
+      <div class="row py-4 d-flex align-items-center">
+
+        <!-- Grid column -->
+        <div class="col-md-6 col-lg-5 text-center text-md-left mb-4 mb-md-0">
+          <h6 class="mb-0">ACO Official Website</h6>
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-6 col-lg-7 text-center text-md-right">
+
+
+          
+
+        </div>
+        <!-- Grid column -->
+
+      </div>
+      <!-- Grid row-->
+
     </div>
-  </body>
+  </div>
+
+  <!-- Footer Links -->
+  <div class="container text-center text-md-left mt-5">
+
+    <!-- Grid row -->
+    <div class="row mt-3">
+
+      <!-- Grid column -->
+      <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+
+        <!-- Content -->
+        <h6 class="text-uppercase font-weight-bold">ACO</h6>
+        <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+        <p>©Images <br> ©Names <br> ©Website <br> ©Code</p>
+
+      </div>
+      <!-- Grid column -->
+
+      <!-- Grid column -->
+      <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+
+        <!-- Links -->
+        <h6 class="text-uppercase font-weight-bold">Website</h6>
+        <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+        <p>
+          <a href="https://ayaan-codes.github.io/a-co/">Home</a>
+        </p>
+        <p>
+          <a href="https://ayaan-codes.github.io/a-co/aboutus.html">About Us</a>
+        </p>
+        <p>
+          <a href="https://ayaan-codes.github.io/a-co/portfolio.html">Products</a>
+        </p>
+        <p>
+          <a href="https://ayaan-codes.github.io/a-co/contact.html">Contact Us</a>
+        </p>
+
+      </div>
+      <!-- Grid column -->
+
+      <!-- Grid column -->
+      <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+
+        <!-- Links -->
+        <h6 class="text-uppercase font-weight-bold">Links</h6>
+        <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+        <p>
+          <a href="https://ayaan-codes.github.io/aco.co/">Connect Website</a>
+        </p>
+        <p>
+          <a href="https://aco-support.crisp.help/en/">Support</a>
+        </p>
+        <p>
+          <a href="https://aco-support.crisp.help/en/">Questions</a>
+        </p>
+        <p>
+          <a href="https://aco-support.crisp.help/en/">More...</a>
+        </p>
+
+      </div>
+      <!-- Grid column -->
+
+      <!-- Grid column -->
+      <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+
+        <!-- Links -->
+        <h6 class="text-uppercase font-weight-bold">Contact</h6>
+        <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+        <p>
+          <i class="fas fa-home mr-3"></i>ACO Global HQ, Kochi, India</p>
+        <p>
+          <i class="fas fa-envelope mr-3"></i>lazoshowaco@gmail.com</p>
+        <p>
+          <i class="fas fa-phone mr-3"></i>(646) 817-6242</p>
+        <p>
+       
+
+      </div>
+      <!-- Grid column -->
+
+    </div>
+    <!-- Grid row -->
+
+  </div>
+  <!-- Footer Links -->
+
+  <!-- Copyright -->
+  <div class="footer-copyright text-center py-3">© 2020 Copyright:
+    <a href="https://ayaan-codes.github.io/a-co/">ACO Company</a>
+  </div>
+  <!-- Copyright -->
+
+</footer>
+<!-- Footer -->
+</body>
 </html>
