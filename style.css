@@ -239,3 +239,7 @@ input[type=submit]:hover {
 .col-md-4 {
     margin-top: 27px
 }
+.dark-mode {
+  background-color: black;
+  color: white;
+}
