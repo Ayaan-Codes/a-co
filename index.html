@@ -13,14 +13,14 @@
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
         <script src="script.js"></script>
         <meta property="Title field"       content="A. CO. Website!"/>
-        <meta property="description"       content="This is ACO's official website, this page provides you everything you need and an about us area. Useful links can also be found on this page. Enjoy ACO!"/>
-        <meta name="theme-color"           content="#0000ff"/>
         <meta property="description"       content="This is ACO's official website, this page provides you everything you need and an about us area. Useful links can also be found on 
                                                     this page. Enjoy ACO!"/>
         <meta name="theme-color"           content="#302898"/>
         <meta name="image"                 content="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQ60V4_w9KXRW3eVIAJDmxoM81vatP45ldUDQ&usqp=CAU"/>
-        <meta name="veiwport"              content= "width=device-width, initial-scale=1.0">
+        <meta name="veiwport"              content= "width=device-width, initial-scale=1.0"/>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <script> function aboutUs() {window.location.href = "https://ayaan-codes.github.io/a-co/aboutus.html"}</script>
+        <script language="JavaScript"> function disableCtrlKeyCombination(e) { //list all CTRL + key combinations you want to disable var forbiddenKeys = new Array('x', 'n', 't', 'x', 'w', 'j' , 'w', 'i', 'p',); var key; var isCtrl; if(window.event) { key = window.event.keyCode;     //IE if(window.event.ctrlKey) isCtrl = true; else isCtrl = false; } else { key = e.which;     //firefox if(e.ctrlKey) isCtrl = true; else isCtrl = false; } //if ctrl is pressed check if other key is in forbidenKeys array if(isCtrl) { for(i=0; i<forbiddenKeys.length; i++) { //case-insensitive comparation if(forbiddenKeys[i].toLowerCase() == String.fromCharCode(key).toLowerCase()) { alert('Key combination CTRL + '+String.fromCharCode(key) +' has been disabled.'); return false; } } } return true; } </script>
 
         
         
@@ -68,7 +68,7 @@
 </style>
 
     </head>
-    <body>
+    <body onkeypress="return disableCtrlKeyCombination(event);" onkeydown="return disableCtrlKeyCombination(event);">
 <!--main-->
         
 <!--spinner-->       
