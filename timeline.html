@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #4724d4;
+  font-family: Helvetica, sans-serif;
+}
+
+/* The actual timeline (the vertical ruler) */
+.timeline {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* The actual timeline (the vertical ruler) */
+.timeline::after {
+  content: '';
+  position: absolute;
+  width: 6px;
+  background-color: white;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  margin-left: -3px;
+}
+
+/* Container around content */
+.container {
+  padding: 10px 40px;
+  position: relative;
+  background-color: inherit;
+  width: 50%;
+}
+
+/* The circles on the timeline */
+.container::after {
+  content: '';
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  right: -17px;
+  background-color: white;
+  border: 4px solid #FF9F55;
+  top: 15px;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+/* Place the container to the left */
+.left {
+  left: 0;
+}
+
+/* Place the container to the right */
+.right {
+  left: 50%;
+}
+
+/* Add arrows to the left container (pointing right) */
+.left::before {
+  content: " ";
+  height: 0;
+  position: absolute;
+  top: 22px;
+  width: 0;
+  z-index: 1;
+  right: 30px;
+  border: medium solid white;
+  border-width: 10px 0 10px 10px;
+  border-color: transparent transparent transparent white;
+}
+
+/* Add arrows to the right container (pointing left) */
+.right::before {
+  content: " ";
+  height: 0;
+  position: absolute;
+  top: 22px;
+  width: 0;
+  z-index: 1;
+  left: 30px;
+  border: medium solid white;
+  border-width: 10px 10px 10px 0;
+  border-color: transparent white transparent transparent;
+}
+
+/* Fix the circle for containers on the right side */
+.right::after {
+  left: -16px;
+}
+
+/* The actual content */
+.content {
+  padding: 20px 30px;
+  background-color: white;
+  position: relative;
+  border-radius: 6px;
+}
+
+/* Media queries - Responsive timeline on screens less than 600px wide */
+@media screen and (max-width: 600px) {
+  /* Place the timelime to the left */
+  .timeline::after {
+  left: 31px;
+  }
+  
+  /* Full-width containers */
+  .container {
+  width: 100%;
+  padding-left: 70px;
+  padding-right: 25px;
+  }
+  
+  /* Make sure that all arrows are pointing leftwards */
+  .container::before {
+  left: 60px;
+  border: medium solid white;
+  border-width: 10px 10px 10px 0;
+  border-color: transparent white transparent transparent;
+  }
+
+  /* Make sure all circles are at the same spot */
+  .left::after, .right::after {
+  left: 15px;
+  }
+  
+  /* Make all right containers behave like the left ones */
+  .right {
+  left: 0%;
+  }
+}
+</style>
+</head>
+<body>
+<h1>ACO TimeLine </h1>
+<div class="timeline">
+  <div class="container left">
+    <div class="content">
+      <h2>May 5th, 2015</h2>
+      <p>ACO Starts operations as AEM (the old name for ACO) with the first website called the A Blog. During the same time we were working on Lazo Entertianment which later became the entertainment branch of ACO. The name AEM use to me Around Earth Manegment</p>
+    </div>
+  </div>
+  <div class="container right">
+    <div class="content">
+      <h2>September 5th, 2015</h2>
+      <p>We started operations of Lazo, the first website being called Lazo Way. The name Lazo was picked as it was zappy, snappy, and something new!</p>
+    </div>
+  </div>
+  <div class="container left">
+    <div class="content">
+      <h2>December 11th, 2015</h2>
+      <p>At this time Lazo has been going well and had overtook A Blog news site and became the main operation, at one point we almost decided to change A Blog to Lazo News but later kept the old name. Lazo was also a website with games, animated videos, and even movies made by Lazo.</p>
+    </div>
+  </div>
+  <div class="container right">
+    <div class="content">
+      <h2>Jan 5th, 2016</h2>
+      <p>AEM was 8 months old and we were looking for names, we had a few options in mind like Ayaan WebOperations, Ayaan Website Company, The Ayaan Website, and A Web. We finaly decided on the name A Web and started a seprate website called ACO Video, it was a video charing app where users could upload videos and share them. After a few months of testing we decided to pull out and go with adding more games.</p>
+    </div>
+  </div>
+  <div class="container left">
+    <div class="content">
+      <h2>Jan 20th, 2016</h2>
+      <p>A Web had hit 50 users and we made a special celebration website that still lasts to this day, whenever there is an event we decorate it and make it so people recognise the day. We also started the ACO Numbers website which is also running to date counting the number of users. (https://number.smb.company)</p>
+    </div>
+  </div>
+  <div class="container right">
+    <div class="content">
+      <h2>Jan 25th, 2016</h2>
+      <p>A Web hit 55 users (just added that in there (55 is a cool number))</p>
+    </div>
+  </div>
+</div>
+<div class="timeline">
+  <div class="container left">
+    <div class="content">
+      <h2>May 5th, 2016</h2>
+      <p>A Web was now 1 year old and we went through another rebrand where we considered names link AWebsites, A Company, A Webers, A Website Company, and Ayaan Company. We selected Ayaan Company but made that the FULL NAME, we branded everything with A. CO. Overtime people started to refer to it as ACO and without the dots it also looked more neat, so we startedbranding with ACO.</p>
+    </div>
+  </div>
+  <div class="container right">
+    <div class="content">
+      <h2>May 5th, 2017</h2>
+      <p>After a year with no new products and some growth ACO was at 66 users and was constantly updating the current products.</p>
+    </div>
+  </div>
+  <div class="container right">
+    <div class="content">
+      <h2>May 5th, 2018</h2>
+      <p>Another year but with 1 new product, ACO Animations, and a milestone of 70 users ACO started its plans for ACO AI, now known as SMARTi App.</p>
+    </div>
+  </div>
+  <div class="container left">
+    <div class="content">
+      <h2>December 3rd, 2018</h2>
+      <p>ACO AI was operational brining in many users to ACO getting us to 85 strong.</p>
+    </div>
+  </div>
+  <div class="container right">
+    <div class="content">
+      <h2>Jan 17th, 2019</h2>
+      <p>ACO had started pushing out features link mad on ACO AI with some even calling it "Smarter than anything before." ACO AI was state of the art and could beat anything any day. At this point ACO had also developed side apps like ACO Calculator to power the calculation feature of ACO AI. This is the motive behind ACO Search and many other products.</p>
+    </div>
+  </div>
+</div>
+<div class="timeline">
+  <div class="container left">
+    <div class="content">
+      <h2>May 5th, 2019</h2>
+      <p>ACO had hit 100 users on its 5th birthday and about another 50 were using the app without making an account. This product also really was popular on news in Japan and the United States.</p>
+    </div>
+  </div>
+  <div class="container right">
+    <div class="content">
+      <h2>December 18th, 2019</h2>
+      <p>We have hit 200 users and 400 without an account for a total of 600, at this point ACO AI was kicking the market in its face and taking over the market of small apps.</p>
+    </div>
+  </div>
+  <div class="container left">
+    <div class="content">
+      <h2>Jan 21st, 2020</h2>
+      <p>ACO at the time was being hosted on a third party who did not allow us to share its name but had a User Trial And Demo unit on Discord. This Trial And Demo Unit was what brings in 14% of ACO users. Discord who has very bad security had a DDOS attack on thier database which caused a total loss of 200 users on ACO.</p>
+    </div>
+  </div>
+  <div class="container right">
+    <div class="content">
+      <h2>Feb 18,19,21,24,26,27,28, 2020</h2>
+      <p>Was filed with issues where Discord kept getting hacked and kept taking us down with it (Life lesson to ANYONE: Never trust discord, they are the worst with security) We were took down all the way to about 10 users due to this.</p>
+    </div>
+  </div>
+  <div class="container left">
+    <div class="content">
+      <h2>May 5th, 2020</h2>
+      <p>ACO at this time had about 300 users and had started new products like ACO Meet, ACO Chat, Mail, Support Systems, and basicaly every product that was launched in 2020. We had also left Discord and partnered with a new hosting company to have 1,000 exlusixe server units other over 5 million tb or storage space. ( ACO turned 5)</p>
+    </div>
+  </div>
+  <div class="container right">
+    <div class="content">
+      <h2>June 5th, 2020</h2>
+      <p>Operations booming, ACO AI became SMARTi App, and uver count hit 500, ACO was done with our product launch segment of the year and went into bug fixing and update mode. At the end on 2020 we had a total of 50 products, 75 services, and 33 premium users.</p>
+    </div>
+  </div>
+</div>
+<div class="timeline">
+  <div class="container left">
+    <div class="content">
+      <h2>Sept 13-14, 2020</h2>
+      <p>ACO was in its first confrence of its 5 year history @ Step Confrence Saudi Arabia that was held online due to  COVID-19 (A pandemic during the time)</p>
+    </div>
+  </div>
+  <div class="container right">
+    <div class="content">
+      <h2>Jan 1st, 2021</h2>
+      <p>Starting ACO's 6th year in operation with a total 25 new products in the production room and potention enterprise orders from some big companies in the works!</p>
+    </div>
+  </div>
+  <div class="container left">
+    <div class="content">
+      <h2>Jan 2nd, 2021</h2>
+      <p>ACO Gets legal for the first time promoting its terms of service and privacy policy!</p>
+    </div>
+  </div>
+  <div class="container right">
+    <div class="content">
+      <h2>Jan 3rd, 2021</h2>
+      <p>ACO Starts rapid growth! We grow by 1,000 users per day till the time of writing.</p>
+    </div>
+  </div>
+  <div class="container left">
+    <div class="content">
+      <h2>Jan 7, 2021</h2>
+      <p>This timeline was made at modnight but year it was the 7th before midnight. At this time we have a total 12,000+ users!</p>
+    </div>
+  </div>
+
+</body>
+</html>
