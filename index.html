@@ -11,6 +11,7 @@
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+	<script src="https://kit.fontawesome.com/3ebfe18c81.js" crossorigin="anonymous"></script>
         <script src="script.js"></script>
         <meta property="Title field"       content="A. CO. Website!"/>
         <meta property="description"       content="This is ACO's official website, this page provides you everything you need and an about us area. Useful links can also be found on 
@@ -269,20 +270,29 @@ window.onclick = function(event) {
 </script>
 
 <script>
-function myFunction() {
+	let mode = "light";
+   
+function myFunction(e) {
    var element = document.body;
+	let m = document.querySelector("#mode");
    element.classList.toggle("dark-mode");
+   if (mode == "light") {
+     mode = "dark";
+	   m.setAttribute("class","fas fa-moon");
+   } else {
+      mode = "light";
+	  m.setAttribute("class","fas fa-sun");
+   }
 }
 </script>
         <noscript>ACO WebModeration: We require you to enable 'JavaScript' for security reasons</noscript>        
 <!-- Footer -->
-<footer class="page-footer font-small unique-color-dark" style="height:auto">
-
+<footer class="page-footer font-small unique-color-dark">
+<h3><i class="fas fa-sun" id="mode" onclick="myFunction()"></i></h3>
   <!-- Footer Links -->
   <div class="container text-center text-md-left mt-5" style="background:none">
-
     <!-- Grid row -->
-    <div class="row mt-3">
+    <div class="row mt-4">
 
       <!-- Grid column -->
       <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
@@ -340,28 +350,29 @@ function myFunction() {
       <!-- Grid column -->
 
       <!-- Grid column -->
-      <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+     
+     <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
 
         <!-- Links -->
         <h6 class="text-uppercase font-weight-bold">Contact</h6>
         <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+	<p>
+	<i class="fas fa-map-marker-alt"></i>
+	  ACO Global HQ, Kochi, India</p>
         <p>
-          Location - </i>ACO Global HQ, Kochi, India</p>
-        <p>
+	<i class="fas fa-envelope"></i>
           Email - lazoshowaco@gmail.com</p>
         <p>
+	<i class="fas fa-phone-alt"></i>
           Phone - (646) 817-6242</p>
-        <p>
+	<p> 
+     </div>
        
-
-      </div>
       <!-- Grid column -->
 
     </div>
     <!-- Grid row -->
 
-  </div>
-  <button onclick="myFunction()" class="but-theme-dm">Dark Mode</button>
   <!-- Footer Links -->
 
   <!-- Copyright -->
