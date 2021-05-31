@@ -1,7 +1,27 @@
+body {
+background: black;	
+}
+
 *
 {
   margin: 0;
   padding: 0;
+}
+
+.about-content h5 {
+  width: 90%;
+  margin: auto;
+}
+
+.about-button {
+margin: auto;
+position: relative;
+}
+
+.about-box {
+  width: 100%;
+  height: 100%;
+  text-align: center;
 }
 
 #nav-bar
@@ -43,22 +63,54 @@
  font-size: 16px;
 }
 
+#mode {
+color: white;
+position: absolute;
+margin-left: 1em;
+margin-top: 1em;
+}
+
 #slider
 {
  width: 100%;
 }
-  
-#about
-{
- margin-top: 50px;
- margin-bottom: 50px;
- margin-right: 150px;
- margin-left: 80px;
- padding-top: 100px;
- padding-bottom: 50px;
- color: #555;
- 
+
+.theme-but {
+width: 150px;
+height: 40px;
+border-radius: 25px;
+color: white;
+background: #6351ce;
+border: none;
 }
+
+.but-theme-dm {
+width: 150px;
+height: 40px;
+border-radius: 25px;
+color: #6351ce;
+background: white;
+left: calc(50% - 75px);
+position: relative;
+border: none;
+}
+
+.nav-item {
+display: inline-block;
+}
+
+.buts {
+width: 60%;
+margin: auto;
+display: inherit;
+flex-direction: row;
+justify-content: space-around;
+}
+
+#support * {
+margin: auto;
+}
+
 .about-content
 {
  padding-top: 30px; 
@@ -200,7 +252,7 @@ input[type=submit]:hover {
     width: 100%;
     height: 100%;
     background-image:linear-gradient(90deg, #26ede7 0%, #333399 100%);
-    animation: spin .5s infinite linear;
+    animation: spin 5s infinite linear;
 }
 .spinner:after {
     width: 90%;
@@ -225,7 +277,7 @@ input[type=submit]:hover {
     background: url("loading.gif") center no-repeat;
     background-size: cover;
 }
-00%  { background-color: #ccc; }
+100%  { background-color: #ccc; }
 }
 
 .ratings i {
@@ -242,4 +294,18 @@ input[type=submit]:hover {
 .dark-mode {
   background-color: black;
   color: white;
+}
+
+footer {
+background: #6351ce;
+position: relative;
+}
+
+footer h6, p {
+color: white;
+}
+
+footer a {
+color: white;
+text-align: center;
 }

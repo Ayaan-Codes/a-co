@@ -11,13 +11,14 @@
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+	<script src="https://kit.fontawesome.com/3ebfe18c81.js" crossorigin="anonymous"></script>
         <script src="script.js"></script>
         <meta property="Title field"       content="A. CO. Website!"/>
         <meta property="description"       content="This is ACO's official website, this page provides you everything you need and an about us area. Useful links can also be found on 
                                                     this page. Enjoy ACO!"/>
         <meta name="theme-color"           content="#302898"/>
         <meta name="image"                 content="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQ60V4_w9KXRW3eVIAJDmxoM81vatP45ldUDQ&usqp=CAU"/>
-        <meta name="veiwport"              content= "width=device-width, initial-scale=1.0"/>
+        <meta name="viewport"              content= "width=device-width, initial-scale=1.0"/>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <script> function aboutUs() {window.location.href = "https://ayaan-codes.github.io/a-co/aboutus.html"}</script>
 
@@ -183,8 +184,8 @@ var myname=prompt("ACO Verification System™: We were able to verify you are hu
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ml-auto">
-        <li class="nav-item active">
-          <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+        <li class="nav-item">
+          <a class="nav-link" href="index.html">Home</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="aboutus.html">About Us</a>
@@ -196,7 +197,7 @@ var myname=prompt("ACO Verification System™: We were able to verify you are hu
           <a class="nav-link" href="contact.html">Contact Us</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="https://acogoogle.business.site/">Updates/More</a>
+          <a class="nav-link" href="https://acogoogle.business.site/">Updates | More</a>
         </li>
       </ul>
       </div>
@@ -209,13 +210,13 @@ var myname=prompt("ACO Verification System™: We were able to verify you are hu
       <div id="#HeaderSlider" class="carousel slide" data-ride="carousel">
       <div class="carousel-inner">
       <div class="carousel-item active">
-      <img class="d-block img-fluid" src="aco winter festival.png" style="height: 564px; width=100%;">
+      <img class="d-block img-fluid" src="aco winter festival.png" style="height:564px;width=100%;">
       </div>
       <div class="carousel-item">
-      <img class="d-block img-fluid" src="backdrop.png" style="height: 564px; width=100%;">
+      <img class="d-block img-fluid" src="backdrop.png" style="height:564px;width=100%;">
       </div>
       <div class="carousel-item">
-      <img class="d-block img-fluid" src="ACO Product map.png" style="height: 564px; width=100%;">
+      <img class="d-block img-fluid" src="ACO Product map.png" style="height:564px;width=100%;">
       </div>
       </div>
       
@@ -234,9 +235,9 @@ var myname=prompt("ACO Verification System™: We were able to verify you are hu
 <!-- About-->                         
                            
       <section id="about"> 
-      <div class="container"> 
+      <div class="container" style="background:none"> 
       <div class="row"> 
-      <div class="col-md-6"> <h3>About Us</h3> <div class="about-content"> 
+      <div class="about-box"> <h3>About Us</h3> <div class="about-content"> 
       <h5>
       We are ACO, also known as the Ayaan Company, we started way back in 2015... To be exact on (May 5th 2015). From that day we have served the world with our amazing loved services. 
       From our movies and TV shows, to our tech services and games. All out services has served thousands over the world. From the start we have kept cost low, but the product quality high. 
@@ -245,26 +246,23 @@ var myname=prompt("ACO Verification System™: We were able to verify you are hu
       </h5>
                                                                                          
                                                                                          
-      </div> 
-      <button type="button" class="btn btn-primary" onclick="aboutUs()"> Read More >>> </button>                                      
+      </div>
+      <br>
+      <br>
+      <button class="theme-but" onclick="aboutUs()"> Read More >>> </button>                                      
                                                                   
       </div>
-      <div class="col-md-6 skill-bar">
-      <p>How much of ACO is currently running:<p> <div class="progress"> <div class="progress-bar" style="width: 13.5%;">13.5%</div> </div>
-      
-
-      </div>                   
-        
       </div>                
       </div>                   
-      </section>   
+      </section>  
+      <br>
+      <br>
+      <br>
+      <br>
                                                                                                                       
 <!-- Portfolio Area--> 
 
-<h2>New Support Website</h2>
-
 <!-- Trigger/Open The Modal -->
-<button id="myBtn">Learn More...</button>
 
 <!-- The Modal -->
 <div id="myModal" class="modal">
@@ -275,7 +273,6 @@ var myname=prompt("ACO Verification System™: We were able to verify you are hu
     <p>We have made a new support website for ACO!</p>
     <a href="asdasdklajsdlkasjdlaksjdlkasjdlkjsakdj.html">Check it out!</a>
   </div>
-
 </div>
 
 <script>
@@ -305,52 +302,31 @@ window.onclick = function(event) {
   }
 }
 </script>
-        
-<br> <br>        
-<button onclick="myFunction()">DARK MODE⚫(beta)</button>
 
 <script>
-function myFunction() {
+	let mode = "light";
+   
+function myFunction(e) {
    var element = document.body;
+	let m = document.querySelector("#mode");
    element.classList.toggle("dark-mode");
+   if (mode == "light") {
+     mode = "dark";
+	   m.setAttribute("class","fas fa-moon");
+   } else {
+      mode = "light";
+	  m.setAttribute("class","fas fa-sun");
+   }
 }
 </script>
-        <noscript>ACO WebModeration: We require you to enable 'JaveScript' for security reasons</noscript>        
+        <noscript>ACO WebModeration: We require you to enable 'JavaScript' for security reasons</noscript>        
 <!-- Footer -->
 <footer class="page-footer font-small unique-color-dark">
-
-  <div style="background-color: #6351ce;">
-    <div class="container">
-
-      <!-- Grid row-->
-      <div class="row py-4 d-flex align-items-center">
-
-        <!-- Grid column -->
-        <div class="col-md-6 col-lg-5 text-center text-md-left mb-4 mb-md-0">
-          <h6 class="mb-0">ACO Official Website</h6>
-        </div>
-        <!-- Grid column -->
-
-        <!-- Grid column -->
-        <div class="col-md-6 col-lg-7 text-center text-md-right">
-
-
-          
-
-        </div>
-        <!-- Grid column -->
-
-      </div>
-      <!-- Grid row-->
-
-    </div>
-  </div>
-
+<h3><i class="fas fa-sun" id="mode" onclick="myFunction()"></i></h3>
   <!-- Footer Links -->
-  <div class="container text-center text-md-left mt-5">
-
+  <div class="container text-center text-md-left mt-5" style="background:none">
     <!-- Grid row -->
-    <div class="row mt-3">
+    <div class="row mt-4">
 
       <!-- Grid column -->
       <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
@@ -408,38 +384,36 @@ function myFunction() {
       <!-- Grid column -->
 
       <!-- Grid column -->
-      <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+     
+     <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
 
         <!-- Links -->
         <h6 class="text-uppercase font-weight-bold">Contact</h6>
         <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+	<p>
+	<i class="fas fa-map-marker-alt"></i>
+	  ACO Global HQ, Kochi, India</p>
         <p>
-          <i class="fas fa-home mr-3"></i>ACO Global HQ, Kochi, India</p>
+	<i class="fas fa-envelope"></i>
+          Email - lazoshowaco@gmail.com</p>
         <p>
-          <i class="fas fa-envelope mr-3"></i>lazoshowaco@gmail.com</p>
-        <p>
-          <i class="fas fa-phone mr-3"></i>(646) 817-6242</p>
-        <p>
+	<i class="fas fa-phone-alt"></i>
+          Phone - (646) 817-6242</p>
+	<p> 
+     </div>
        
-
-      </div>
       <!-- Grid column -->
 
     </div>
     <!-- Grid row -->
 
-  </div>
   <!-- Footer Links -->
 
   <!-- Copyright -->
-  <div class="footer-copyright text-center py-3">-
-    <a href="https://ayaan-codes.github.io/a-co/">ACO Company</a>
+  <div class="footer-copyright text-center py-3">
+    <a href="https://ayaan-codes.github.io/a-co/">Ayaan Company</a>
   </div>
-  <!-- Copyright -->
-
 </footer>
-<!-- Footer -->
-
     </body>                                                                         
 </html>
     
